@@ -3,6 +3,8 @@
 	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.cloudnotes.mapper.AdminMapper">
 
+<!-- 提交测试 -->
+
 	<!--根据笔记id删除用户笔记  -->
 	<!--Integer deleteGetId(Integer id)  -->
 	<delete id="deleteGetId">
