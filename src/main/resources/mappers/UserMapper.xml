@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+
+<mapper namespace="cn.tedu.cloudnotes.mapper.UserMapper">
+	
+	<!--插入用户信息  -->
+	<!--Integer insert(User user)  -->
+	<insert id="insert" 
+		useGeneratedKeys="true"
+		keyProperty="id">
+		INSERT INTO
+			user(
+				role,username,
+				password,email,nickname
+			)
+		VALUES(
+			#{role},#{username},
+			#{password},#{email},
+			#{nickname}
+		)
+		</insert>
+		
+		<!--修改密码  -->
+		<!--Integer updatePassword(@Param("id")Integer id,@Param("password")String password)  -->
+		<update id="updatePassword">
+			UPDATE
+				user
+			SET
+			password=#{password}
+			WHERE
+			 id=#{id}
+		</update>
+		
+		<!--修改信息  -->
+		<!--Integer updateMessage(User user)  -->
+		<update id="updateMessage">
+			UPDATE 
+				user
+			SET
+				email=#{email},nickname=#{nickname}
+			WHERE 
+				id=#{id}
+		</update>
+		
+		<!--根据用户名查询用户数据  -->
+		<!--User findByUsername(String username)  -->
+		<select id="findByUsername" resultType="cn.tedu.cloudnotes.entity.User">
+			SELECT
+				id,password
+			FROM 
+				user
+			WHERE
+				username=#{username} and role=1
+		</select>
+		
+		<!--根据用户昵称查询用户数据  -->
+		<!--User findByNickname(String nickname)  -->
+		<select id="findByNickname" resultType="cn.tedu.cloudnotes.entity.User">
+			SELECT
+				id
+			FROM 
+				user
+			WHERE
+				nickname=#{nickname} and role=1
+		</select>
+		
+		<!--根据用户id查询用户数据  -->
+		<!--User findById(Integer id)  -->
+		<select id="findById" resultType="cn.tedu.cloudnotes.entity.User">
+			SELECT 
+				username,password,
+				email,nickname			
+			FROM
+				user
+			WHERE
+				id=#{id} and role=1
+		</select>
+	
+
+</mapper>
+
+
+
+
+

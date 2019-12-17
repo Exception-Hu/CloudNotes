@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.cloudnotes.mapper.Json">
+	<!--
+	  返回下拉框的信息
+	List<SelectJson> selectJson(); -->
+	<select id="selectJson" resultType="cn.tedu.cloudnotes.entity.SelectJson">
+		select id,username
+		from user
+	</select>
+</mapper>
+
+
+
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户注册</title>
+<style type="text/css">
+* {
+  margin: 10px auto;
+}
+
+body {
+  font-size: 16px;
+}
+
+a {
+  font-size:14px;
+  color: #008000;
+}
+img{
+  width:550px;
+}
+</style>
+</head>
+<body>
+    <table width="350" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="8"><img
+            src="../images/logo.gif"></td>
+        </tr>
+        <tr>
+          <td align="center">
+             <a href="input.html">[编写笔记]</a></td>
+          <td align="center">
+             <a href="browse.html">[查看笔记]</a></td>
+          <td align="center">
+             <a href="reg.html">[用户注册]</a></td>
+          <td align="center">
+          <td align="center">
+             <a  href="login.html">[用户登入]</a></td>
+          <td align="center"> 
+             <a href="changepassword.html">[修改密码]</a></td>
+          <td align="center">
+             <a href="changeInfo.html">[修改信息]</a></td>
+          <td align="center">
+             <a href="adminLogin.html">[版主管理]</a></td>
+         </tr>
+    </table>
+    <form id="form-reg">
+      <table width="350" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="right">用户名：</td>
+          <td width="230"><input name="username" id="username"
+            type="text"></td>
+        </tr>
+        <tr>
+          <td align="right">密码：</td>
+          <td><input name="password" id="password" type="password"></td>
+        </tr>
+        <tr>
+          <td align="right">邮箱：</td>
+          <td><input name="email" id="email" type="text"></td>
+        </tr>
+        <tr>
+          <td align="right">昵称：</td>
+          <td><textarea name="nickname" rows="3"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+          <input id="btn-reg"type="button" value="注册">
+          <input type="reset"></td>
+        </tr>
+      </table>
+    </form>
+  <script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    $("#btn-reg").click(function(){
+    	
+      	$.ajax({
+      		"url":"/user/reg",
+      		"data":$("#form-reg").serialize(),
+      		"type":"post",
+      		"dataType":"json",
+      		"success":function(json){
+      			if(json.state==0){
+      				alert("注册成功");
+      				location.href="login.html";
+      			}else{
+      				alert(json.message);
+      				}
+      			}
+      		})
+         });
+    
+    
+  </script>
+</body>
+</html>

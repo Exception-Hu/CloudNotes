@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../easyui/themes/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+	<div class="easyui-layout" data-options="fit:true,border:false;border:false">
+		<div  data-options="region:'north'" style="height:80px;" >
+			<form action="" >
+				<div style="margin-top: 20px;margin-left: 20px;width:145px;height:30px;float:left"><input type="text" class="easyui-textbox" data-options="prompt:'请输入姓名'"></div>
+				<div style="margin-top: 20px;margin-left: 20px; float:left"><a  class="easyui-linkbutton" data-options="text:'查询'"></a></div>
+				<div style="margin-top: 20px;margin-left: 20px; float:left"><a  class="easyui-linkbutton" data-options="text:'查询'"></a></div>
+				<div style="margin-top: 20px;margin-left: 20px; float:left"><a  class="easyui-linkbutton" data-options="text:'添加'"></a></div>
+				<div style="margin-top: 20px;margin-left: 20px; float:left"><a  class="easyui-linkbutton" data-options="text:'删除'"></a></div>
+				<div style="margin-top: 20px;margin-left: 20px; float:left"><a  class="easyui-linkbutton" data-options="text:'修改'"></a></div>
+			</form>
+		</div>
+		<div data-options="region:'center'" style="margin-left: 10px">
+			<table id="matrix_dataGrid" class="easyui-datagrid" style="width:700px"
+			data-options="url:'<%=request.getContextPath()%>/post?operateFlag=init',
+				pagination:true,border:false,singleSelect:true,striped:true,nowrap:true,pageSize:10,pageList: [5,10,15]">
+			<thead>
+				<tr>
+					<th data-options="field:'id',hidden:true"></th>
+					<th data-options="field:'names',align:'center'" width="100px">姓名</th>
+					<th data-options="field:'sex',align:'center'" width="100px">性别</th>
+					<th data-options="field:'subject',align:'center'" width="100px">班级</th>
+					<th data-options="field:'birthday',align:'center'" width="100px">生日</th>
+					<th data-options="field:'mobile',align:'center'" width="100px">联系方式</th>
+					<th data-options="field:'address',align:'center'" width="100px">家庭住址</th>
+					
+				</tr>
+			</thead>
+		</table>	
+	</div>	
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.cloudnotes.mapper.AdminMapper">
+
+	<!--根据笔记id删除用户笔记  -->
+	<!--Integer deleteGetId(Integer id)  -->
+	<delete id="deleteGetId">
+		DELETE
+		FROM
+			message
+		WHERE
+			id=#{id}
+	</delete>
+	
+	<!--根据管理员的名字查询数据  -->
+	<!--User findByUsername(String adminname)  -->
+	<select id="findByUsername" resultType="cn.tedu.cloudnotes.entity.User">
+		SELECT
+			id,password
+		FROM
+			user
+		WHERE
+			username=#{adminname} and role=0
+	</select>
+	
+	<!--查询全部笔记信息  -->
+	<!--List<NotesMessage> findByAll()  -->
+	<select id="findByAll" resultType="cn.tedu.cloudnotes.entity.NotesMessage">
+		SELECT
+			m.id,username,nickname,
+		    author,create_time AS createTime,
+			title,content
+		FROM
+			user u join message m
+		ON
+			u.id=m.user_id
+		order by create_time desc
+	</select>
+	
+	<!--根据笔记id查询笔记信息  -->
+	<!--NotesMessage findByid(Integer id)  -->
+	<select id="findByid" resultType="cn.tedu.cloudnotes.entity.NotesMessage">
+		SELECT
+			id
+		FROM
+			message
+		WHERE
+			id=#{id}
+	</select>
+</mapper>
+
+
+
+
+

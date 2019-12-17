@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.cloudnotes.mapper.NotesMapper">
+
+	<!--添加笔记  -->
+	<!--Integer insertNotes(Message message)  -->
+	<insert id="insertNotes">
+		INSERT
+		INTO
+			message(
+				user_id,author,
+				create_time,title,
+				content
+			)
+		VALUES(
+			#{userId},#{author},
+			#{createTime},#{title},
+			#{content}
+		)	
+	</insert>
+	
+	<!--查看全部笔记  -->
+	<!--Message browseNotes(Integer id)  -->
+	<select id="browseNotes" resultType="cn.tedu.cloudnotes.entity.NotesMessage">
+		SELECT
+			username,nickname,
+		    author,create_time AS createTime,
+			title,content
+		FROM
+			user u join message m
+		ON
+			u.id=m.user_id
+		WHERE
+			m.user_id=#{id}
+		order by create_time desc
+		
+	</select>
+	
+	
+	
+	
+</mapper>
+
+
+
+
+
