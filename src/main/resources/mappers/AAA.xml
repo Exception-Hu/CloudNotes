@@ -3,26 +3,7 @@
 	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.cloudnotes.mapper.AdminMapper">
 
-	<!--根据笔记id删除用户笔记  -->
-	<!--Integer deleteGetId(Integer id)  -->
-	<delete id="deleteGetId">
-		DELETE
-		FROM
-			message
-		WHERE
-			id=#{id}
-	</delete>
 	
-	<!--根据管理员的名字查询数据  -->
-	<!--User findByUsername(String adminname)  -->
-	<select id="findByUsername" resultType="cn.tedu.cloudnotes.entity.User">
-		SELECT
-			id,password
-		FROM
-			user
-		WHERE
-			username=#{adminname} and role=0
-	</select>
 	
 	<!--查询全部笔记信息  -->
 	<!--List<NotesMessage> findByAll()  -->
