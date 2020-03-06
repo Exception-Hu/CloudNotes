@@ -25,5 +25,8 @@ public class JsonController {
 	}
 	public void test3(){
 	}
+	public void test5(){
+	}
+
 
 }
