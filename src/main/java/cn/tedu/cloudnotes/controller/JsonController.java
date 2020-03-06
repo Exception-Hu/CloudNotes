@@ -20,5 +20,6 @@ public class JsonController {
 		return json.selectJson();
 	}
 public void test1(){}
+public void test2() {}
 
 }
