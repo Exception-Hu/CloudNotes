@@ -19,14 +19,5 @@ public class JsonController {
 	public List<SelectJson> selectJson(){
 		return json.selectJson();
 	}
-	public void test(){
-	}
-	public void test2(){
-	}
-	public void test3(){
-	}
-	public void test5(){
-	}
-
 
 }
