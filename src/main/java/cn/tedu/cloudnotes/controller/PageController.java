@@ -9,4 +9,8 @@ public class PageController {
 	public String page() {
 		return null;
 	}
+	
+	public void test1() {
+		
+	}
 }
