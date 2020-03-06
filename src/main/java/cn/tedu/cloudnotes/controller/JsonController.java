@@ -19,5 +19,14 @@ public class JsonController {
 	public List<SelectJson> selectJson(){
 		return json.selectJson();
 	}
+<<<<<<< HEAD
+=======
+	public void test(){
+	}
+>>>>>>> branch 'master' of https://github.com/Exception-Hu/CloudNotes.git
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Exception-Hu/CloudNotes.git
 }
