@@ -6,5 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 public class PageController {
-
+	
+	public void page2() {}
 }
