@@ -29,11 +29,9 @@ public class JsonController {
 	public void test4() {
 		
 	}
-<<<<<<< HEAD
-	public void test8(){
-=======
 	public void test5(){
->>>>>>> branch 'master' of https://github.com/Exception-Hu/CloudNotes.git
+	}
+	public void test8(){
 	}
 public void test7(){
 }
