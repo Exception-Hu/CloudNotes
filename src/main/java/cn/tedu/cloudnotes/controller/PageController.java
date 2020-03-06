@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 public class PageController {
 	
 	public void page2() {}
-public void page1(){}
+public void page5(){}
 }
